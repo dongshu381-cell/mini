@@ -1,0 +1,33 @@
+    }
+
+    function openDrawer() {
+document.getElementById('mask').style.display='block'；
+文件。getElementById('drawer').classList.Add('open')；
+    }
+
+    function closeDrawer() {
+document.getElementById('mask').style.display='none'；
+文件。getElementById('drawer').classList.remove('open')；
+    }
+
+函数renderGrid(){
+Const grid=document.getElementById('epGrid')；
+grid.innerHTML=dramaList.map((item，idx)=>'
+        <其他 班级="ep-card${idx===currentIdx？'active'："}" onclick="loadEpisode(${idx});closeDrawer();">
+第${item.episode}集
+        </其他>
+').join(")；
+    }
+
+    // 触控上下滑动切换剧集
+设starty=0；
+文件。getElementById('app')。addEventListener('touchstart'，E=>starty=e.touches[0].clientY，{passive:true})；
+文件。getElementById('app')。addEventListener('touchend'，E=>{
+Const diff=starty-e.changedTouches[0].clientY；
+如果(Math.ABS(diff)>60)diff>0-Nextep()：prevEp()；
+}，{passive:true})；
+
+loadEpisode(0)；
+  </脚本>
+</身体>
+</超文本标记语言>
